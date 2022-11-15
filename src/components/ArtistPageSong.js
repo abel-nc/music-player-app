@@ -39,7 +39,7 @@ const ArtistPageSong = ({ number, cover, name, album, id }) => {
     }
 
     return (
-        <div className='card-song w-100 mb-3 d-flex font-primary align-items-center p-0'>
+        <div className='card-song w-100 d-flex font-primary align-items-center p-0'>
             <h6 className='number mb-0'>{number}.</h6>
             <div className='d-flex align-items-center'>
                 <div className={`${activeSong.key == searchID && searchID.length > 0  
