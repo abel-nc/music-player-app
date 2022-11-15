@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router';
+import Searcher from './components/Searcher';
+import Sidebar from './components/Sidebar';
+import './main.scss';
+import Discover from './pages/Discover'
+import AroundYou from './pages/AroundYou'
+import TopArtists from './pages/TopArtists'
+import TopCharts from './pages/TopCharts'
+import SongBar from './components/SongBar';
+import { useGlobalContext } from './context';
+import ArtistPage from './pages/ArtistPage';
+import SongPage from './pages/SongPage';
+import SearchPage from './pages/SearchPage';
 
-function App() {
+const App = () => {
+
+  const { activeSong } = useGlobalContext()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='d-flex'>
+      <Sidebar />
+      <div className='app-page'>
+        <Searcher />
+        <div className='d-flex'>
+          <Routes>
+            <Route path='/' element={<Discover />} />
+            <Route path='/around-you' element={<AroundYou />} />
+            <Route path='/top-artists' element={<TopArtists />} />
+            <Route path='/top-charts' element={<TopCharts />} />
+            <Route path='/artists/:id' element={<ArtistPage />} />
+            <Route path='/songs/:id' element={<SongPage />} />
+            <Route path='/search/:query' element={<SearchPage />} />
+          </Routes>
+        </div>
+      </div>
+      { activeSong.hub ? <SongBar /> : null }
+    </main>
   );
 }
 

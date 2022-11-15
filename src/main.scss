@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import './sass/variables';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-primary;
+    overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
+}
+
+// GLOBAL CLASSES 
+.w-100 {
+    width: 100%;
+}
+
+.font-primary {
+    color: $font-primary;
+    &:hover {
+        color: $font-primary;
+    }
+}
+
+.font-secondary {
+    color: $font-secondary;
+    &:hover {
+        color: $font-secondary;
+    }
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+// LOGO
+.logo {
+    color: $color-accent-secondary;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-accent-secondary;
+    }
+}
+
+// SIDEBAR 
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background-color: $bg-secondary;
+    position: fixed;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index: 5;
+
+    .logo {
+        display: block;
+        font-size: 3.5rem;
+        margin: 0 auto 6rem;
+    }
+
+    .s-links {
+        .link {
+            transition: 120ms ease;
+            &:hover {
+                color: $color-accent !important;
+            }
+        }
+    
+        .active {
+            color: #fff !important;
+            &:hover {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+
+// APP PAGE
+.app-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 2rem calc(2rem + 50px);
+    overflow-y: auto;
+    margin-left: 240px;
+}
+
+
+// SEARCHER 
+.searcher {
+
+    button {
+        cursor: default;
+    }
+
+    input[type="text"] {
+        outline: none;
+        &::placeholder {
+            color: $color-accent;
+        }
+    }
+}
+
+
+// DISCOVER PAGE 
+.genres-select {
+    background-color: $bg-secondary;
+    outline: none;
+}
+
+// LOADER 
+.loader {
+    display: flex;
+    margin: 0 auto;
+    user-select: none;
+}
+
+
+// SONGS CONTAINER 
+.songs-ct {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(5, 250px);
+    grid-auto-rows: auto;
+    justify-content: center;
+}
+
+.song-card {
+    background-color: rgba(41, 49, 71, 0.45);
+    user-select: none;
+    transition: 120ms ease;
+
+    .card-img {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+        border-radius: 3px;
+        cursor: pointer;
+
+        .play-icon {
+            display: none;
+            color: #fff;
+            font-size: 2.25rem;
+        }
+
+        &:hover {
+            filter: brightness(0.6);
+
+            .play-icon {
+                display: block;
+            }
+        }
+    }
+
+    .active {
+        filter: brightness(0.6);
+
+        .play-icon {
+            display: block;
+        }
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    .card-song {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .card-artist {
+        h6 {
+            font-size: 0.8rem;
+            text-transform: capitalize;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &:last-child {
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// ARTIST CARD
+.artist-card {
+    transition: 120ms ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(90, 106, 144, 0.4);
+    }
+
+    .card-img {
+        &:hover {
+            filter: brightness(1);
+        }
+    }
+}
+
+
+// SONG BAR 
+.song-bar {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(32, 38, 54);
+    border-top: 1px solid $color-accent;
+    user-select: none;
+    margin: 0;
+    z-index: 6;
+
+    .song-bar-img {
+        width: 60px;
+        height: 60px;
+        margin-right: 0.75rem;
+        background-position: center;
+        background-size: cover;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    .card-song {
+        text-decoration: none;
+        cursor: default;
+    }
+
+    .card-artist {
+        cursor: default;
+
+        h6 {
+            font-size: 0.8rem;
+            text-transform: capitalize;
+        }
+
+        &:last-child {
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .volume-icon {
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    // INPUT RANGE STYLES
+    input[type='range'] {
+            display: block;
+            background-color: transparent;
+        }
+        
+    input[type='range']:focus {
+        outline: none;
+    }
+    
+    input[type='range'],
+    input[type='range']::-webkit-slider-runnable-track,
+    input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-top: -6px;
+    }
+    
+    input[type=range]::-moz-range-thumb {
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-top: -6px;
+    }
+    
+    input[type=range]::-ms-thumb {
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-top: -6px;
+    }
+    
+    input[type=range]::-webkit-slider-runnable-track {
+        background-color: rgb(156, 156, 156);
+        height: 3px;
+    }
+    
+    input[type=range]:focus::-webkit-slider-runnable-track {
+            outline: none;
+    }
+    
+    input[type=range]::-moz-range-track {
+        background-color: rgb(156, 156, 156);
+        height: 3px;
+    }
+    
+    input[type=range]::-ms-track {
+        background-color: rgb(156, 156, 156);
+        height: 3px;
+    }
+    
+    input[type=range]::-ms-fill-lower {
+        background-color: $color-accent
+    }
+    
+    input[type=range]::-ms-fill-upper {
+        background-color: rgb(156, 156, 156);
+    } 
+
+    .time-num {
+        font-size: 0.8rem;
+    }
+}
+
+
+// ARTIST PAGE 
+.artist-page {
+
+    .artist-img {
+        width: 170px;
+        height: 170px;
+        border: 2px solid #fff;
+        border-radius: 170px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .link {
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+
+    .genre {
+        &:last-child {
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .artist-songs-ct {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .card-song {
+            user-select: none;
+    
+            .number {
+                font-size: 1rem;
+                width: 33px;
+            }
+    
+            .song-img {
+                width: 80px;
+                height: 80px;
+                background-position: center;
+                background-size: cover;
+                cursor: pointer;
+    
+                .play-icon {
+                    display: none;
+                    color: #fff;
+                    font-size: 1.5rem;
+                }
+        
+                &:hover {
+                    filter: brightness(0.6);
+        
+                    .play-icon {
+                        display: block;
+                    }
+                }
+            }
+    
+            .active {
+                filter: brightness(0.6);
+        
+                .play-icon {
+                    display: block;
+                }
+            }
+    
+            h5 {
+                font-size: 1.1rem;
+                font-weight: bold;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+    
+            h6 {
+                font-size: 0.9rem;
+                cursor: default;
+            }
+        }
+    }
+
+}
+
+
+// SONG PAGE
+.song-page {
+
+    .artist-img {
+        cursor: pointer;
+
+        .play-icon {
+            display: none;
+            color: #fff;
+            font-size: 2.25rem;
+        }
+
+        &:hover {
+            filter: brightness(0.6);
+
+            .play-icon {
+                display: block;
+            }
+        }
+    }
+
+    .active {
+        filter: brightness(0.6);
+
+        .play-icon {
+            display: block;
+        }
+    }
+}
+
+// MENU ICON
+.menu-icon {
+    display: none;
+}
+
+.close-icon {
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+}
+
+
+@media screen and (max-width: 1680px) {
+
+    .songs-ct {
+        grid-template-columns: repeat(4, 250px);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+    .songs-ct {
+        grid-template-columns: repeat(3, 250px);
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        transition: 150ms ease-in;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .app-page {
+        margin: 0;
+    }
+
+    .show-sidebar {
+        transform: translateX(0);
+        transition: 150ms ease-out;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .song-bar {
+        z-index: 4;
+    }
+}
+
+@media screen and (max-width: 875px) {
+
+    .songs-ct {
+        grid-template-columns: repeat(2, 250px);
+    }
+
+    .artist-page {
+        padding-bottom: 5rem;
+
+        .artist-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 110px;
+        }
+
+        .card-song {
+            user-select: none;
+
+    
+            .number {
+                font-size: 1rem;
+                width: 33px;
+            }
+    
+            .song-img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    .artist-page {
+        .artist-songs-ct {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 595px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .songs-ct {
+        grid-template-columns: repeat(1, 250px);
+    }
+}
