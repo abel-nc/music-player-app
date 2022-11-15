@@ -370,6 +370,7 @@ body {
     .artist-songs-ct {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
 
         .card-song {
             user-select: none;
