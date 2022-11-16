@@ -16,6 +16,7 @@ const SearchPage = () => {
 
     useEffect(() => {
         setResults([])
+        setIsError(false)
         fetchSearch()
     }, [query])
 
