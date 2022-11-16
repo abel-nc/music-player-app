@@ -4,7 +4,7 @@ export const baseUrl = 'https://shazam-core.p.rapidapi.com/v1'
 export const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'bcd902ee52mshe51363bcc1761b1p1f16acjsna28f46d5f335',
+		'X-RapidAPI-Key': '3f4b173da6msh76f607d0b20d5cap16a167jsne9eb3dd764dc',
 		'X-RapidAPI-Host': 'shazam-core.p.rapidapi.com'
 	}
 }
