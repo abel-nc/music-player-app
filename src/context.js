@@ -20,6 +20,7 @@ const AppProvider = ({ children }) => {
     // FETCH DATA
     const fetchData = async (endpoint) => {
         setSongs([])
+	setIsError(false)
         try {
             const response = await fetch(`${baseUrl}${endpoint}`, options)
             const result = await response.json()
