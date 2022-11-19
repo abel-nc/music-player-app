@@ -28,7 +28,7 @@ const ArtistPage = () => {
         return <Loader />
     }
     return (
-        <section className='artist-page w-100 font-primary mb-5'>
+        <section className='artist-page w-100 font-primary mb-3'>
             <div className='d-flex align-items-center mb-5'>
                 <div className='artist-img me-3' 
                     style={{ backgroundImage: `url(${artist.artists[id].attributes.artwork?.url})` }}>
