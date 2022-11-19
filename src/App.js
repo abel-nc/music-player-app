@@ -12,6 +12,7 @@ import { useGlobalContext } from './context';
 import ArtistPage from './pages/ArtistPage';
 import SongPage from './pages/SongPage';
 import SearchPage from './pages/SearchPage';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
             <Route path='/search/:query' element={<SearchPage />} />
           </Routes>
         </div>
+        <Footer />
       </div>
       { activeSong.hub ? <SongBar /> : null }
     </main>
