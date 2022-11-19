@@ -4,7 +4,7 @@ import { genres } from '../assets/constants'
 import { useGlobalContext } from '../context'
 
 const Discover = () => {
-    const { fetchData, setSongs, isError } = useGlobalContext()
+    const { fetchData, setSongs } = useGlobalContext()
     const [selectedGenre, setSelectedGenre] = useState('ALL')
     const genreName = genres.find(genre => genre.value == selectedGenre).title
 
