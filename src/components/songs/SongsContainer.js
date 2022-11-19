@@ -7,6 +7,9 @@ import SongCard from './SongCard'
 const SongsContainer = () => {
     const { songs, isError } = useGlobalContext()
 
+    if (isError) {
+        return <h2 className='text-center text-white'>Something went wrong. Please try again later.</h2>
+    }
     return (
         <>
             { songs.length > 0 
