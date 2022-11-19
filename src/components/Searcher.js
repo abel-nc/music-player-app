@@ -14,8 +14,9 @@ const Searcher = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (query.length == 0) return navigate('/')
+        if (query.length == 0) return null
         navigate(`/search/${query}`)
+        setQuery('')
     }
 
     return (
