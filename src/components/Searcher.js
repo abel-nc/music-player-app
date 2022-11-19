@@ -22,10 +22,10 @@ const Searcher = () => {
     return (
         <form onSubmit={handleSubmit} className='searcher justify-content-between d-flex mb-5 pt-3 fs-5'>
             <div className='d-flex col'>
-                <button className='d-flex align-items-center pe-4 text-white fw-bold bg-transparent border-0 cursor-normal'>
+                <button className='col-auto d-flex align-items-center pe-4 text-white fw-bold bg-transparent border-0 cursor-normal'>
                     <BsSearch />
                 </button>
-                <input onChange={handleChange} value={query} className='text-white bg-transparent border-0 outline-0' type="text" placeholder='Search...' />
+                <input onChange={handleChange} value={query} className='text-white col bg-transparent border-0 outline-0' type="text" placeholder='Search...' />
             </div>
             <FaBars onClick={() => setIsSidebarOpen(true)} className='menu-icon fs-2 font-primary ms-3 col-auto c-pointer' />
         </form>
