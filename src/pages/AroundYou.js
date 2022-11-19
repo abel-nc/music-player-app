@@ -6,27 +6,12 @@ const geoKey = 'at_k6QsDBLsQgaQ39YaTCxbJeasCx73i'
 
 const AroundYou = () => {
     const { setIsError, fetchData, setSongs } = useGlobalContext()
-    const [country, setCountry] = useState('')
+    const [country, setCountry] = useState('MX')
 
     useEffect(() => {
         setSongs([])
-        fetchCountry()
-        if (country.length > 0) {
-            fetchData(`/charts/country?country_code=${country}`)
-        }
+        fetchData(`/charts/country?country_code=${country}`)
     }, [country])
-
-    // GET USERS COUNTRY
-    const fetchCountry = async () => {
-        try {
-            const response = await fetch(`${geoUrl}/country?apiKey=${geoKey}`)
-            const result = await response.json()
-            setCountry(result.location.country)
-        } catch (e) {
-            console.log(e)
-            setIsError(true)
-        }
-    }
 
     return (
         <section className='w-100'>
