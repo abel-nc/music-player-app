@@ -345,7 +345,7 @@ body {
 // FOOTER 
 .foot {
   margin-top: 2rem;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
   font-family: 'Pacifico', cursive;
 }
 
@@ -522,6 +522,10 @@ body {
 }
 
 @media screen and (max-width: 875px) {
+    
+    .foot {
+      margin-bottom: 130px;
+    }
 
     .songs-ct {
         grid-template-columns: repeat(2, 250px);
