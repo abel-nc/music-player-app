@@ -20,11 +20,11 @@ const TopArtists = () => {
                 { songs.length > 0
                     ? <div className='songs-ct w-100'> 
                         {
-                            songs.map(song => <ArtistCard
+                            songs?.map(song => <ArtistCard
                                 key={song.key}
-                                id={song.artists[0].adamid}
-                                name={song.artists[0].alias}
-                                cover={song.images.background}
+                                id={song.artists[0]?.adamid}
+                                name={song.artists[0]?.alias}
+                                cover={song.images?.background}
                             />)
                         }
                     </div> 
