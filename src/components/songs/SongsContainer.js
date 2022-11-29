@@ -16,12 +16,11 @@ const SongsContainer = () => {
                 ? <div className='songs-ct'>
                 {
                     songs?.map(song => <SongCard 
-                        key={song?.key}
-                        id={song?.key}
-                        title={song?.title}
-                        artists={song?.artists}
-                        cover={null}
-                        /*cover={song?.images?.coverart}*/
+                        key={song.key}
+                        id={song.key}
+                        title={song.title}
+                        artists={song.artists}
+                        cover={song?.images?.coverart}
                     />)
                 }
                 </div>
