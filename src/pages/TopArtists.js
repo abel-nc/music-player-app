@@ -22,8 +22,8 @@ const TopArtists = () => {
                         {
                             songs?.map(song => <ArtistCard
                                 key={song.key}
-                                id={song.artists[0]?.adamid}
-                                name={song.artists[0]?.alias}
+                                id={song.artists?[0].adamid}
+                                name={song.artists?[0].alias}
                                 cover={song.images?.background}
                             />)
                         }
