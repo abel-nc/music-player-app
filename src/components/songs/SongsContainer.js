@@ -12,10 +12,10 @@ const SongsContainer = () => {
     }
     return (
         <>
-            { /* songs.length > 0 
+            { songs.length > 0 
                 ? <div className='songs-ct'>
                 {
-                    songs.map(song => <SongCard 
+                    songs?.map(song => <SongCard 
                         key={song.key}
                         id={song.key}
                         title={song.title}
@@ -26,8 +26,7 @@ const SongsContainer = () => {
                 </div>
                 : isError
                     ? <Error />
-                    : <Loader /> */
-                console.log(songs)
+                    : <Loader /> 
             }
         </>
     )
