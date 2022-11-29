@@ -24,14 +24,8 @@ const TopArtists = () => {
                                 key={song.key}
                                 /*id={song.artists[0].adamid}
                                 name={song.artists[0].alias}*/
-                                id={song.artists.map(artist, index) => {
-                                    if (index == 0) return artist.adamid  
-                                  }
-                                }
-                                name={song.artists.map(artist, index) => {
-                                    if (index == 0) return artist.alias  
-                                  }
-                                }
+                                id={song.artists?.map(artist, index) => index == 0 ? artist.adamid : null}
+                                name={song.artists?.map(artist, index) => index == 0 ? artist.alias : null}
                                 cover={song.images?.background}
                             />)
                         }
