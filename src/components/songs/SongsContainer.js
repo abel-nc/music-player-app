@@ -20,7 +20,7 @@ const SongsContainer = () => {
                         id={song?.key}
                         title={song?.title}
                         artists={song?.artists}
-                        cover={song?.images.coverart}
+                        /*cover={song?.images?.coverart}*/
                     />)
                 }
                 </div>
